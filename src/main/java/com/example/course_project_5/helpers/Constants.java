@@ -15,7 +15,7 @@ public class Constants {
         public static String quote_text_column = "quote_text";
         public static String quote_date_column = "quote_date";
         public static String subject_column = "subject_name";
-        public static String teacher_id_column = "teacher_id";
+        public static String teacher_column = "teacher_name";
         public static String creator_column = "creator";
         public static String access_level_column = "access_level";
     }

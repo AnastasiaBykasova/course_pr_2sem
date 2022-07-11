@@ -27,6 +27,17 @@ public class Quote {
         this.creatorID = creatorID;
         this.accessLevel = accessLevel;
     }
+    public Quote(int id,
+                 Quote quote
+    ) {
+        this.id = id;
+        this.text = quote.getText();
+        this.creationDate = quote.getCreationDate();
+        this.subject = quote.getSubject();
+        this.teacher = quote.getTeacher();
+        this.creatorID = quote.getCreatorID();
+        this.accessLevel = quote.getAccessLevel();
+    }
 
     public int getId() {
         return id;
@@ -35,6 +46,9 @@ public class Quote {
     public String getText() {
         return text;
     }
+    public void setText(String text) {
+        this.text = text;
+    }
 
     public Date getCreationDate() {
         return creationDate;
@@ -42,10 +56,6 @@ public class Quote {
 
     public String getSubject() {
         return subject;
-    }
-
-    public String getTeacherID() {
-        return teacher;
     }
 
     public String getTeacher() {
