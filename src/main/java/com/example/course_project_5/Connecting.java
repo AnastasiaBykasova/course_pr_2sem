@@ -1,5 +1,7 @@
 package com.example.course_project_5;
 
+import com.example.course_project_5.helpers.Secrets;
+
 import java.sql.*;
 
 public class Connecting {

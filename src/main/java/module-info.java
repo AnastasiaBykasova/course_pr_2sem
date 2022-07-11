@@ -7,4 +7,6 @@ module com.example.course_project_5 {
 
     opens com.example.course_project_5 to javafx.fxml;
     exports com.example.course_project_5;
+    exports com.example.course_project_5.helpers;
+    opens com.example.course_project_5.helpers to javafx.fxml;
 }
