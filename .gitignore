@@ -107,7 +107,6 @@ cmake-build-*/
 
 # File-based project format
 
-
 # IntelliJ
 out/
 
@@ -154,3 +153,4 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+/src/main/java/com/example/course_project_5/Configs.java
