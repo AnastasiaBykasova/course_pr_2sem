@@ -19,6 +19,20 @@ public class User {
         this.status = status;
         this.level = level;
     }
+    public User(User old, String login) {
+        this.id = old.getId();
+        this.login = login;
+        this.password = old.getPassword();
+        this.status = old.getStatus();
+        this.level = old.getLevel();
+    }
+    public User(User old, String password, Boolean encrypteed) {
+        this.id = old.getId();
+        this.login = old.getLogin();
+        this.password = encrypteed ? password : password; //TODO encrypt password
+        this.status = old.getStatus();
+        this.level = old.getLevel();
+    }
 
     public int getId() {
         return id;
