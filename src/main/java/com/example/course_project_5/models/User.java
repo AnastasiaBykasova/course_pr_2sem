@@ -43,4 +43,15 @@ public class User {
         Basic,
         Super
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", status=" + status +
+                ", level=" + level +
+                '}';
+    }
 }
