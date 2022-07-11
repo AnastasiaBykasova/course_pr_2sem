@@ -13,7 +13,7 @@ public class Connecting {
                     .getConnection(
                             "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_1992_quotes_of_teachers",
                             "std_1992_quotes_of_teachers",
-                            Secrets.dbPassword
+                            SecretsConstants.dbPassword
                     );
             return connection;
 
