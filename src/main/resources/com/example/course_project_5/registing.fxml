@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.course_project_5.Controller_registing">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="663.0" style="-fx-background-color: #ede6ff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.course_project_5.Controller_registing">
     <children>
         <Label layoutX="162.0" layoutY="24.0" text="Quotes of Teachers">
             <font>
@@ -33,9 +33,9 @@
                 </RadialGradient>
             </textFill>
         </Label>
-        <TextField fx:id="username_field" layoutX="226.0" layoutY="164.0" prefHeight="26.0" prefWidth="211.0" promptText="Create username" />
-        <PasswordField fx:id="password_field" layoutX="226.0" layoutY="205.0" prefHeight="26.0" prefWidth="211.0" promptText="Create password" />
+        <TextField fx:id="username_field" layoutX="226.0" layoutY="164.0" prefHeight="26.0" prefWidth="211.0" promptText="Create username" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;" />
+        <PasswordField fx:id="password_field" layoutX="226.0" layoutY="205.0" prefHeight="26.0" prefWidth="211.0" promptText="Create password" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;" />
         <Button fx:id="confirm_button" layoutX="301.0" layoutY="286.0" mnemonicParsing="false" text="Confirm" />
-      <TextField fx:id="name_of_group" layoutX="226.0" layoutY="245.0" prefHeight="26.0" prefWidth="211.0" promptText="Enter your group name" />
+      <TextField fx:id="name_of_group" layoutX="226.0" layoutY="245.0" prefHeight="26.0" prefWidth="211.0" promptText="Enter your group name" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;" />
     </children>
 </AnchorPane>
