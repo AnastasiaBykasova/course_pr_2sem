@@ -39,6 +39,7 @@
                </textFill>
             </Label>
             <Button fx:id="adding_in_table" layoutX="527.0" layoutY="9.0" mnemonicParsing="false" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;" text="Add" />
+            <Button fx:id="changing_smth" layoutX="28.0" layoutY="10.0" mnemonicParsing="false" text="Change data" />
          </children>
       </AnchorPane>
       <SplitPane prefHeight="359.0" prefWidth="600.0">

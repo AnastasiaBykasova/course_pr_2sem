@@ -46,6 +46,9 @@ public class Controller_main {
     private Button adding_in_table;
 
     @FXML
+    private Button changing_smth;
+
+    @FXML
     void initialize() {
         assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'main-screen.fxml'.";
         quotes = new Quotes();

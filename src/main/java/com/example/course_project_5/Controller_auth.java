@@ -35,36 +35,57 @@ public class Controller_auth {
     public void initialize() {
 
         confirm_button.setOnAction(Event -> {
-            String enter_username_text = username_field.getText().trim();
-            String enter_password_text = password_field.getText().trim();
-            
-            if ((!enter_username_text.equals("")) && (!enter_password_text.equals(""))) {
-                enter_user(enter_username_text, enter_password_text);
+                    String enter_username_text = username_field.getText().trim();
+                    String enter_password_text = password_field.getText().trim();
+
+                    if ((!enter_username_text.isEmpty()) &&
+                            (!enter_password_text.isEmpty())
+                    ) {
+
+                        System.out.println("Button 'Confirm' is chosen");
+                        confirm_button.getScene().getWindow().hide();
+
+                        FXMLLoader load1 = new FXMLLoader();
+                        load1.setLocation(getClass().getResource("main-screen.fxml"));
+
+                        try {
+                            load1.load();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        Controller_main main = load1.getController();
+                        main.setCurrentUser(enter_user(enter_username_text,
+                                enter_password_text
+                        ));
+                        Parent root1 = load1.getRoot();
+                        Stage stage1 = new Stage();
+                        stage1.setScene(new Scene(root1));
+                        stage1.showAndWait();
+
+                    } else {
+                        System.out.println("A field is empty");
+                    }
                 }
-            else {
-                System.out.println("A field is empty");
-            }
-        });
+        );
 
 
         regist_button.setOnAction(Event -> {
-            System.out.println("Button 'Confirm' is chosen");
+            System.out.println("Button 'Registration' is chosen");
             regist_button.getScene().getWindow().hide();
 
-            FXMLLoader load1 = new FXMLLoader();
-            load1.setLocation(getClass().getResource("registing.fxml"));
+            FXMLLoader load2 = new FXMLLoader();
+            load2.setLocation(getClass().getResource("registing.fxml"));
 
             try {
-                load1.load();
-            }
-            catch (IOException e) {
+                load2.load();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            Parent root = load1.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            Parent root2 = load2.getRoot();
+            Stage stage2 = new Stage();
+            stage2.setScene(new Scene(root2));
+            stage2.showAndWait();
 
 
         });

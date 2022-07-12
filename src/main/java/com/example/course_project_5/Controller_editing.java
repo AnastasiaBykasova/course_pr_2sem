@@ -23,6 +23,8 @@ public class Controller_editing {
         currentQuote = quote;
         this.main = main;
         setupFields(quote);
+        editButton.setDisable(!isUserAuthorized());
+        deleteButton.setDisable(!isUserAuthorized());
     }
 
     @FXML
@@ -97,7 +99,7 @@ public class Controller_editing {
                             main.updateQuote(quote);
                         }
                     } else {
-                        System.out.println("Accesess denied");
+                        System.out.println("Access denied");
                     }
 
 
@@ -109,7 +111,7 @@ public class Controller_editing {
                         QuoteWorker.deleteQuote(currentQuote.getId());
                         main.deleteQuote(currentQuote);
                     } else {
-                        System.out.println("Accesess denied");
+                        System.out.println("Access denied");
                     }
                 }
         );
