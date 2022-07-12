@@ -35,21 +35,19 @@ public class Controller_registing {
         Connecting setting_connect = new Connecting();
         confirm_button.setOnAction(Event -> {
                     System.out.println(" ");
-                    String enter_username_text = username_field.getText().trim();
-                    String enter_password_text = password_field.getText().trim();
-                    String enter_group_text = name_of_group.getText().trim();
+                    String enter_username_text = username_field.getText();
+                    String enter_password_text = password_field.getText();
+                    String enter_group_text = name_of_group.getText();
 
                     if ((!enter_username_text.isEmpty()) &&
                             (!enter_password_text.isEmpty()) &&
-                            (!enter_group_text.isEmpty()) &&
-                            Integer.getInteger(enter_group_text) != null) {
+                            (!enter_group_text.isEmpty()) ) {
                         User user = UserWorker.createUser(username_field.getText(),
                                 password_field.getText(),
-                                Integer.getInteger(name_of_group.getText())
+                                Integer.parseInt(name_of_group.getText())
                         );
                         callMainScreen(user);
-                    }
-                    else {
+                    } else {
                         System.out.println("Не все поля заполнены");
                     }
                 }

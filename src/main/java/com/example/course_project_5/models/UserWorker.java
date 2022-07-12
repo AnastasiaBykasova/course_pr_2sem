@@ -2,7 +2,10 @@ package com.example.course_project_5.models;
 
 import com.example.course_project_5.Connecting;
 import com.example.course_project_5.helpers.Constants;
+import com.example.course_project_5.helpers.PasswordHelper;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.*;
 
 public class UserWorker {
@@ -21,7 +24,16 @@ public class UserWorker {
                         + "VALUES ( ?, ?, ?, ?, ?)";
         System.out.println(insert_data);
 
-        String passwordHash = password; //TODO add encryption
+        String passwordHash = null;
+        try {
+            passwordHash = PasswordHelper.generateStorngPasswordHash(password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+            return null;
+        }
         Integer level = name_of_group;
         try {
             Connection connect = Connecting.getDb_connect();
@@ -79,7 +91,16 @@ public class UserWorker {
                         + Constants.USER_TABLE.password_columm + " = ? " +
                         " WHERE id = ?";
 
-        String passwordHash = password; //TODO add encryption
+        String passwordHash = null;
+        try {
+            passwordHash = PasswordHelper.generateStorngPasswordHash(password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+            return null;
+        }
         try {
             Connection connect = Connecting.getDb_connect();
             PreparedStatement prSt = connect.prepareStatement(insert_data);
@@ -92,6 +113,26 @@ public class UserWorker {
                     passwordHash,
                     true
             );
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public static User updateGroup(User oldUser, Integer group) {
+        String insert_data =
+                "UPDATE " +
+                        Constants.USER_TABLE.table_name + " SET "
+                        + Constants.USER_TABLE.level_columm + " = ? " +
+                        " WHERE id = ?";
+        System.out.println(insert_data);
+        try {
+            Connection connect = Connecting.getDb_connect();
+            PreparedStatement prSt = connect.prepareStatement(insert_data);
+            prSt.setInt(1, group);
+            prSt.setInt(2, oldUser.getId());
+            prSt.execute();
+            connect.close();
+            return new User(oldUser, group);
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

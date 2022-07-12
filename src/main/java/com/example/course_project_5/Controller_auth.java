@@ -1,6 +1,7 @@
 package com.example.course_project_5;
 
 import com.example.course_project_5.helpers.Constants;
+import com.example.course_project_5.helpers.PasswordHelper;
 import com.example.course_project_5.models.User;
 import com.example.course_project_5.models.UserWorker;
 import javafx.fxml.FXML;
@@ -13,6 +14,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -94,7 +97,16 @@ public class Controller_auth {
     private User enter_user(String enter_username_text,
                             String enter_password_text
     ) {
-        String hash_password = enter_password_text; //TODO add hashing
+        String hash_password = null;
+        try {
+            hash_password = PasswordHelper.generateStorngPasswordHash(enter_password_text);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+            return null;
+        }
         try {
             Connection connection = Connecting.getDb_connect();
             String query = "SELECT * FROM " + Constants.USER_TABLE.table_name +

@@ -58,6 +58,25 @@ public class Controller_main {
                     showEditorScreen();
                 }
         );
+        changing_smth.setOnAction(
+                event -> {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader();
+                        fxmlLoader.setLocation(getClass().getResource("changing.fxml"));
+                        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+                        userStage.setScene(scene);
+
+                        Controller_change_data changeController = fxmlLoader.getController();
+                        changeController.setUser(currentUser,
+                                this
+                        );
+
+                        userStage.show();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+        );
     }
 
     TableColumn quoteColumn;
@@ -132,6 +151,10 @@ public class Controller_main {
     public void deleteQuote(Quote quote) {
         quoteObservableList.remove(quote);
         tableView.refresh();
+        userStage.close();
+    }
+    public void newUser(User user) {
+        currentUser = user;
         userStage.close();
     }
 }

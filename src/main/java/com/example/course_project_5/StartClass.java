@@ -1,14 +1,24 @@
 package com.example.course_project_5;
 
+import com.example.course_project_5.helpers.PasswordHelper;
 import com.example.course_project_5.models.Quote;
 import com.example.course_project_5.models.QuoteWorker;
 import com.example.course_project_5.models.Quotes;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.Date;
 
 public class StartClass {
     public static void main(String[] args) {
-        allQuote();
+        try {
+            System.out.println(PasswordHelper.generateStorngPasswordHash("1"));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (InvalidKeySpecException e) {
+            throw new RuntimeException(e);
+        }
+//        allQuote();
     }
 
     private static void printAllQuotes() {
