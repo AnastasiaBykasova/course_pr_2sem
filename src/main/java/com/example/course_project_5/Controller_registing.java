@@ -28,36 +28,18 @@ public class Controller_registing {
     private TextField username_field;
 
     @FXML
+    private TextField name_of_group;
+
+    @FXML
     public void initialize() {
         Connecting setting_connect = new Connecting();
         confirm_button.setOnAction(Event -> {
-            System.out.println(" ");
-            try {
-                //db_Handler.regist_save_data(username_field.getText(), password_field.getText());
-                setting_connect.regist_save_data(username_field.getText(), password_field.getText());
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        });
+                    System.out.println(" ");
+                    User user = UserWorker.createUser(username_field.getText(), password_field.getText(),
+                            name_of_group.getText());
+                    System.out.println(user);
+                }
+        );
 
     }
-
-    /*
-    @FXML
-    public void initialize() {
-        DB_handler db_Handler = new DB_handler();
-        confirm_button.setOnAction(Event -> {
-            try {
-                db_Handler.regist_save_data(username_field.getText(), password_field.getText());
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        });
-
-    }
-
-     */
-
-
-
 }

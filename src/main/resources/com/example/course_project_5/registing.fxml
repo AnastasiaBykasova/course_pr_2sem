@@ -33,8 +33,9 @@
                 </RadialGradient>
             </textFill>
         </Label>
-        <TextField fx:id="username_field" layoutX="225.0" layoutY="205.0" prefHeight="26.0" prefWidth="211.0" promptText="Create username" />
-        <PasswordField fx:id="password_field" layoutX="225.0" layoutY="243.0" prefHeight="26.0" prefWidth="211.0" promptText="Create password" />
+        <TextField fx:id="username_field" layoutX="226.0" layoutY="164.0" prefHeight="26.0" prefWidth="211.0" promptText="Create username" />
+        <PasswordField fx:id="password_field" layoutX="226.0" layoutY="205.0" prefHeight="26.0" prefWidth="211.0" promptText="Create password" />
         <Button fx:id="confirm_button" layoutX="301.0" layoutY="286.0" mnemonicParsing="false" text="Confirm" />
+      <TextField fx:id="name_of_group" layoutX="226.0" layoutY="245.0" prefHeight="26.0" prefWidth="211.0" promptText="Enter your group name" />
     </children>
 </AnchorPane>

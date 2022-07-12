@@ -6,7 +6,7 @@ import com.example.course_project_5.helpers.Constants;
 import java.sql.*;
 
 public class UserWorker {
-    public static User createUser(String login, String password) {
+    public static User createUser(String login, String password, String name_of_group) {
         String insert_data =
                 "INSERT INTO " +
                         Constants.USER_TABLE.table_name + " ( "

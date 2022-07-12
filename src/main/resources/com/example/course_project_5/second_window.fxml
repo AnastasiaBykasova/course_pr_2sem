@@ -71,9 +71,5 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <ImageView fx:id="picture_nurofen" fitHeight="150.0" fitWidth="200.0" layoutX="233.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../java/com/example/course_project_5/pictures/photo_2021-11-23_18-47-38.jpg" />
-         </image></ImageView>
     </children>
 </AnchorPane>
