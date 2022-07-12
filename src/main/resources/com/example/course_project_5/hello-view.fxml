@@ -54,11 +54,11 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <TextField fx:id="username_field" layoutX="225.0" layoutY="211.0" prefHeight="26.0" prefWidth="211.0" promptText="Username" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;">
+      <TextField fx:id="username_field" layoutX="225.0" layoutY="211.0" prefHeight="26.0" prefWidth="211.0" promptText="Enter username" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;">
          <font>
             <Font name="Georgia" size="12.0" />
          </font></TextField>
-      <PasswordField fx:id="password_field" layoutX="225.0" layoutY="254.0" prefHeight="26.0" prefWidth="211.0" promptText="Password" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;">
+      <PasswordField fx:id="password_field" layoutX="225.0" layoutY="254.0" prefHeight="26.0" prefWidth="211.0" promptText="Enter password" style="-fx-border-color: #4c02fa; -fx-background-color: #ede6ff;">
          <font>
             <Font name="Georgia" size="12.0" />
          </font></PasswordField>
