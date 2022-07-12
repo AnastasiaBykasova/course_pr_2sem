@@ -28,12 +28,6 @@ public class Controller_editing {
     }
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private Button addButton;
 
     @FXML

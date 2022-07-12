@@ -20,12 +20,6 @@ public class Controller_change_data {
     }
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private Button confirm_button;
 
     @FXML
