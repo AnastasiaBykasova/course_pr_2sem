@@ -63,6 +63,7 @@ public class Controller_editing {
         assert quoteTextArea != null : "fx:id=\"quoteTextArea\" was not injected: check your FXML file 'editing-quotes.fxml'.";
         assert subjectTextField != null : "fx:id=\"subjectTextField\" was not injected: check your FXML file 'editing-quotes.fxml'.";
         assert teacherTextField != null : "fx:id=\"teacherTextField\" was not injected: check your FXML file 'editing-quotes.fxml'.";
+
         addButton.setOnAction(
                 event -> {
                     if (!quoteTextArea.getText().isEmpty() &&
