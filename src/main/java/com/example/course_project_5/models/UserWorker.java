@@ -6,7 +6,10 @@ import com.example.course_project_5.helpers.Constants;
 import java.sql.*;
 
 public class UserWorker {
-    public static User createUser(String login, String password, String name_of_group) {
+    public static User createUser(String login,
+                                  String password,
+                                  Integer name_of_group
+    ) {
         String insert_data =
                 "INSERT INTO " +
                         Constants.USER_TABLE.table_name + " ( "
@@ -19,7 +22,7 @@ public class UserWorker {
         System.out.println(insert_data);
 
         String passwordHash = password; //TODO add encryption
-        Integer level = 211361; //TODO добавить параметр уровня
+        Integer level = name_of_group;
         try {
             Connection connect = Connecting.getDb_connect();
             PreparedStatement prSt = connect.prepareStatement(insert_data, Statement.RETURN_GENERATED_KEYS);

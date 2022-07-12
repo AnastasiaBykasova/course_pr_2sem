@@ -13,7 +13,7 @@ public class StartClass {
 
     private static void printAllQuotes() {
         Quotes q = new Quotes();
-        q.getQuotes();
+        q.loadQuotes();
         //print all quotes
         for (Quote quote : q) {
             System.out.println(quote);

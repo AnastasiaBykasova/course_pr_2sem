@@ -11,7 +11,15 @@ import java.util.ArrayList;
 
 public class Quotes extends ArrayList<Quote> {
 
-    public void getQuotes() {
+    public Quotes() {
+        loadQuotes();
+
+    }
+    public ArrayList<Quote> getQuotes() {
+        return this;
+    }
+
+    public void loadQuotes() {
         this.clear();
         String query = "SELECT * FROM " + Constants.QUOTE_TABLE.table_name;
         try {
