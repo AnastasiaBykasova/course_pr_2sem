@@ -1,5 +1,10 @@
 package com.example.course_project_5.models;
 
+import com.example.course_project_5.helpers.PasswordHelper;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+
 public class User {
     private int id;
     private String login;
@@ -29,11 +34,26 @@ public class User {
     public User(User old, String password, Boolean encrypteed) {
         this.id = old.getId();
         this.login = old.getLogin();
-        this.password = encrypteed ? password : password; //TODO encrypt password
+        if (encrypteed) this.password = password;
+        else {
+            try {
+                this.password = PasswordHelper.generateStorngPasswordHash(password);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            } catch (InvalidKeySpecException e) {
+                e.printStackTrace();
+            }
+        }
         this.status = old.getStatus();
         this.level = old.getLevel();
     }
-
+    public User(User old, Integer groupId) {
+        this.id = old.getId();
+        this.login = old.getLogin();
+        this.password = old.getPassword();
+        this.status = old.getStatus();
+        this.level = groupId;
+    }
     public int getId() {
         return id;
     }
