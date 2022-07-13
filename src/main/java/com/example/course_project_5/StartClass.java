@@ -37,7 +37,7 @@ public class StartClass {
                 "Some text",
                 new Date(System.currentTimeMillis()),
                 "Some Subject",
-                "Some Teatcher",
+                "Some Teacher",
                 1,
                 1);
         q = QuoteWorker.addQuote(q);
@@ -52,7 +52,7 @@ public class StartClass {
                     "Some text2",
                     new Date(System.currentTimeMillis()),
                     "Some Subject",
-                    "Some Teatcher",
+                    "Some Teacher",
                     1,
                     1);
         } else {
